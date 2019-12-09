@@ -1,0 +1,37 @@
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: #f3f3f3;
+  }
+  table {
+    border-spacing: 15px;
+  }
+  img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 300px;
+  }
+  body {
+    background-image: url("Tareas/imageeee.jpg");
+  }
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  h2 {
+    color: white;
+    text-align: center;
+  }
+  h3 {
+    color: white;
+    text-align: center;
+  }
+  h4 {
+    color: white;
+    text-align: center;
+  }
+  ppp {
+    color: white;
+    text-align: right;
+  }
