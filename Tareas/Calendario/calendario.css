@@ -1,0 +1,92 @@
+* {
+	font-family: sans-serif;
+}
+
+body {
+	background-image: url("navidad.jpg");
+}
+
+.title {
+	text-align: center;
+}
+
+#titleText {
+	background-color: #32ee0c;
+	padding: 15px;
+	width: 40%;
+	border: solid 3px rgb(0, 0, 0);
+	border-radius: 100px;
+	display: inline-block;
+}
+
+#calendario {
+	margin-left: 31%;
+	width: 35%;
+	padding: 30px;
+	border: solid 3px rgb(5, 5, 5);
+	border-radius: 100px;
+	background: rgb(235, 20, 13);
+}
+
+.calHeader {
+	border: solid 2px rgb(0, 0, 0);
+	border-radius: 100px;
+	padding: 100px;
+}
+
+#anterior {
+	
+	display: inline;
+	padding: 5px;
+	background-color: #32ee0c;
+	color: rgb(0, 0, 0);
+	border-radius: 10px;
+	float: left;
+}
+
+#titulos {
+	display: inline;
+	margin-left: 15%;
+}
+
+#posterior {
+	display: inline;
+	padding: 5px;
+	background-color: #32ee0c;
+	color: rgb(0, 0, 0);
+	border-radius: 10px;
+	float: right;
+}
+
+#diasc {
+	width: 100%;
+	padding: 10px;
+	margin-top: 20px;
+	border: solid 10px black;
+	border-radius: 30px;
+	font-size: 16px;
+}
+
+#fechaactual {
+	padding: 15px;
+	text-align: center;
+}
+
+#todayBtn {
+	margin: 5px;
+	height: 40px;
+	width: 80px;
+	font-size: 16px;
+	background-color: #32ee0c;
+	border-radius: 10px;
+	color: rgb(0, 0, 0);
+	margin-right: 10px;
+}
+
+#buscafecha {
+	margin-left: 50%;
+}
+
+td {
+	text-align: left;
+}
