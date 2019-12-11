@@ -3,11 +3,11 @@
 
 meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 
-lasemana=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado"]
+lasemana=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sï¿½bado"]
 
 diassemana=["lun","mar","mie","jue","vie","sab","dom"];
 
-//Tras cargarse la página ...
+//Tras cargarse la pï¿½gina ...
 window.onload = function() {
 
 //fecha actual
@@ -15,7 +15,7 @@ hoy=new Date(); //objeto fecha actual
 diasemhoy=hoy.getDay(); //dia semana actual
 diahoy=hoy.getDate(); //dia mes actual
 meshoy=hoy.getMonth(); //mes actual
-annohoy=hoy.getFullYear(); //año actual
+annohoy=hoy.getFullYear(); //aï¿½o actual
 
 // Elementos del DOM: en cabecera de calendario 
 tit=document.getElementById("titulos"); //cabecera del calendario
@@ -33,14 +33,14 @@ document.buscar.buscaanno.value=annohoy;
 
 // Definir elementos iniciales:
 mescal = meshoy; //mes principal
-annocal = annohoy //año principal
+annocal = annohoy //aï¿½o principal
 
 //iniciar calendario:
 cabecera() 
 primeralinea()
 escribirdias()
 }
-//FUNCIONES de creación del calendario:
+//FUNCIONES de creaciï¿½n del calendario:
 //cabecera del calendario
 function cabecera() {
          tit.innerHTML=meses[mescal]+" de "+annocal;
@@ -51,27 +51,27 @@ function cabecera() {
          ant.innerHTML=meses[mesant]
          pos.innerHTML=meses[mespos]
          } 
-//primera línea de tabla: días de la semana.
+//primera lï¿½nea de tabla: dï¿½as de la semana.
 function primeralinea() {
          for (i=0;i<7;i++) {
              celda0=f0.getElementsByTagName("th")[i];
              celda0.innerHTML=diassemana[i]
              }
          }
-//rellenar celdas con los días
+//rellenar celdas con los dï¿½as
 function escribirdias() {
          //Buscar dia de la semana del dia 1 del mes:
-         primeromes=new Date(annocal,mescal,"1") //buscar primer día del mes
-         prsem=primeromes.getDay() //buscar día de la semana del día 1
-         prsem--; //adaptar al calendario español (empezar por lunes)
+         primeromes=new Date(annocal,mescal,"1") //buscar primer dï¿½a del mes
+         prsem=primeromes.getDay() //buscar dï¿½a de la semana del dï¿½a 1
+         prsem--; //adaptar al calendario espaï¿½ol (empezar por lunes)
          if (prsem==-1) {prsem=6;}
          //buscar fecha para primera celda:
          diaprmes=primeromes.getDate() 
-         prcelda=diaprmes-prsem; //restar días que sobran de la semana
-         empezar=primeromes.setDate(prcelda) //empezar= tiempo UNIX 1ª celda
+         prcelda=diaprmes-prsem; //restar dï¿½as que sobran de la semana
+         empezar=primeromes.setDate(prcelda) //empezar= tiempo UNIX 1ï¿½ celda
          diames=new Date() //convertir en fecha
          diames.setTime(empezar); //diames=fecha primera celda.
-         //Recorrer las celdas para escribir el día:
+         //Recorrer las celdas para escribir el dï¿½a:
          for (i=1;i<7;i++) { //localizar fila
              fila=document.getElementById("fila"+i);
              for (j=0;j<7;j++) {
@@ -96,7 +96,7 @@ function escribirdias() {
                     celda.style.backgroundColor="#f0b19e";
                     celda.innerHTML="<cite title='Fecha Actual'>"+midia+"</cite>";
                     }
-                 //pasar al siguiente día
+                 //pasar al siguiente dï¿½a
                  midia=midia+1;
                  diames.setDate(midia);
                  }
@@ -105,9 +105,9 @@ function escribirdias() {
 //Ver mes anterior
 function mesantes() {
          nuevomes=new Date() //nuevo objeto de fecha
-         primeromes--; //Restamos un día al 1 del mes visualizado
+         primeromes--; //Restamos un dï¿½a al 1 del mes visualizado
          nuevomes.setTime(primeromes) //cambiamos fecha al mes anterior 
-         mescal=nuevomes.getMonth() //cambiamos las variables que usarán las funciones
+         mescal=nuevomes.getMonth() //cambiamos las variables que usarï¿½n las funciones
          annocal=nuevomes.getFullYear()
          cabecera() //llamada a funcion de cambio de cabecera
          escribirdias() //llamada a funcion de cambio de tabla.
@@ -116,7 +116,7 @@ function mesantes() {
 function mesdespues() {
          nuevomes=new Date() //nuevo obejto fecha
          tiempounix=primeromes.getTime() //tiempo de primero mes visible
-         tiempounix=tiempounix+(45*24*60*60*1000) //le añadimos 45 días 
+         tiempounix=tiempounix+(45*24*60*60*1000) //le aï¿½adimos 45 dï¿½as 
          nuevomes.setTime(tiempounix) //fecha con mes posterior.
          mescal=nuevomes.getMonth() //cambiamos variables 
          annocal=nuevomes.getFullYear()
@@ -126,29 +126,29 @@ function mesdespues() {
 //volver al mes actual
 function actualizar() {
          mescal=hoy.getMonth(); //cambiar a mes actual
-         annocal=hoy.getFullYear(); //cambiar a año actual 
+         annocal=hoy.getFullYear(); //cambiar a aï¿½o actual 
          cabecera() //escribir la cabecera
          escribirdias() //escribir la tabla
          }
 //ir al mes buscado
 function mifecha() {
-         //Recoger dato del año en el formulario
+         //Recoger dato del aï¿½o en el formulario
          mianno=document.buscar.buscaanno.value; 
          //recoger dato del mes en el formulario
          listameses=document.buscar.buscames;
          opciones=listameses.options;
          num=listameses.selectedIndex
          mimes=opciones[num].value;
-         //Comprobar si el año está bien escrito
+         //Comprobar si el aï¿½o estï¿½ bien escrito
          if (isNaN(mianno) || mianno<1) { 
-            //año mal escrito: mensaje de error
-            alert("El año no es válido:\n debe ser un número mayor que 0")
+            //aï¿½o mal escrito: mensaje de error
+            alert("El aï¿½o no es vï¿½lido:\n debe ser un nï¿½mero mayor que 0")
             }
-         else { //año bien escrito: ver mes en calendario:
+         else { //aï¿½o bien escrito: ver mes en calendario:
               mife=new Date(); //nueva fecha
-              mife.setMonth(mimes); //añadir mes y año a nueva fecha
+              mife.setMonth(mimes - 1); //aï¿½adir mes y aï¿½o a nueva fecha
               mife.setFullYear(mianno);
-              mescal=mife.getMonth(); //cambiar a mes y año indicados
+              mescal=mife.getMonth(); //cambiar a mes y aï¿½o indicados
               annocal=mife.getFullYear();
               cabecera() //escribir cabecera
               escribirdias() //escribir tabla
