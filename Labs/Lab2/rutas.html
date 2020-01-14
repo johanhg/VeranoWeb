@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	    <script type="text/javascript" src="scripts.js"></script>
+		<link rel="stylesheet" href="estilillo.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+		<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+		
+		<style>
+		.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+		.button {background-color: #008CBA;} /* Blue */
+		</style>
+    
+</head>
+
+<body>
+<button class="button button2" onclick="mostrarMapa('rutaCompleta.json')">Mostrar ruta completa</button>
+<button class="button button2" onclick="mostrarMapa('direcAlajuela.json')">Alajuela - 8 Paradas</button>
+<button class="button button2" onclick="mostrarMapa('direcSanJose.json')">San Jose - 4 Paradas</button>
+<button class="button button2" onclick="mostrarMapa('direcCa.json')">Cartago - Bus Directo</button>
+<button class="button button2" onclick="eliminarMapa()">Borrar mapa</button>
+
+<input class="button button2" type="button" value="Reload Page" onClick="document.location.reload(true)">
+<p id="demo"></p>
+
+<div id='map' style='width: 100%; height:530px;'></div>
+
+</body>
+</html>
